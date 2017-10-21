@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
-  PARAMS_SIGNUP = [:fullname, :mail_address, :password, :password_confirmation]
+  PARAMS_SIGNUP = [:fullname, :email_address, :password, :password_confirmation]
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
-  validates :mail_address, format: {with: EMAIL_REGEX}, uniqueness: true, presence: true
+  validates :email_address, format: {with: EMAIL_REGEX}, uniqueness: true, presence: true
   validates :password, presence: true, length: {minimum: 6, maximum: 20}
 
   before_create :generate_confirm_token
-  after_create :confirm_mail_address
+  after_create :confirm_email_address
 
   has_secure_password
 
@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
     generate_token :confirm_token
   end
 
-  def confirm_mail_address
-    UserMailer.confirm_user_mail(self).deliver_now
+  def confirm_email_address
+    UserMailer.confirm_user_email(self).deliver_now
   end
 end
