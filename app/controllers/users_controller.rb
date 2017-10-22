@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  skip_before_action :require_login, only: [:new, :create]
+
   def index
+    @users = User.all
   end
 
   def new
@@ -15,6 +18,10 @@ class UsersController < ApplicationController
       flash[:danger] = "Signup failed"
       render :new
     end
+  end
+
+  def show
+     @user = User.find_by id: params[:id]
   end
 
   def check_email_address

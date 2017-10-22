@@ -1,1 +1,24 @@
-<label>Index Page</label>
+<!-- <label>Index Page</label> -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h1 class="title">LOGIN APP</h1>
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="">Welcome</label>
+      <%= link_to current_user.fullname, user_path(current_user) %>
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="">List Users</label>
+      <table class="table">
+        <thead>
+          <th>ID</th>
+          <th>User Name</th>
+        </thead>
+        <tbody>
+          <%= render @users %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
