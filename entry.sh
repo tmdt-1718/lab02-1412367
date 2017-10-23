@@ -1,7 +1,7 @@
 #  rails new . --database=postgresql
 
-#bundle check
-#bundle install
+bundle check
+bundle install
 
 rails db:create
 rails db:migrate
