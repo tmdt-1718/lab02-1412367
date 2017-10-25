@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   resources :messages
   get "/inbox", to: "dashboard#inbox"
   get "/compose" , to: "messages#new"
+  get "/outbox", to: "dashboard#outbox"
   get "/friends" , to: "dashboard#friends"
 end

@@ -9,11 +9,17 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new mess_compose_params
-    if @message.save
-      flash[:success] = "Send success"
+    @user = User.find_by email_address: params[:message][:receiver].to_s.downcase.gsub(/\s+/, '')
+    if @user
+      if @message.save
+      flash[:success] = "Gửi thành công"
       redirect_to "/compose"
+      else
+        flash[:danger] = "Gửi thất bại"
+        redirect_to "/compose"
+      end
     else
-      flash[:danger] = "Send failed"
+      flash[:danger] = "Người nhận không tồn tại trên hệ thống"
       redirect_to "/compose"
     end
   end

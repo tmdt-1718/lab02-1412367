@@ -38,13 +38,13 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="/inbox">Hòm tin</a></li>
             <li><a href="/compose">Soạn tin nhắn</a></li>
-            <li class="active"><a href="#">Tin đã gửi</a></li>
+            <li class="active"><a href="/outbox">Tin đã gửi</a></li>
             <li><a href="/friends">Danh sách người dùng</a></li>
 
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Logout", logout_path, method: :delete %></li>
+            <li><%= link_to "Đăng xuất " + current_user.fullname, logout_path, method: :delete %></li>
           </ul>
             </li>
           </ul>

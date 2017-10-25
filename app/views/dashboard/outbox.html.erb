@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 form-group">
+    </div>
+    <div class="col-lg-12 form-group">
+      <table class="table table-striped">
+        <thead>
+          <th>ID</th>
+          <th>Receiver</th>
+          <th>Subject</th>
+          <th>Boby</th>
+        </thead>
+        <tbody>
+          <% @mess.each do |mess| %>
+            <tr>
+              <td>
+                <%= mess.id %>
+              </td>
+              <td>
+                <%= mess.receiver %>
+              </td>
+              <td>
+                <%= mess.subject %>
+              </td>
+              <td>
+                <%= mess.body %>
+              </td>
+              <td>
+                <%= link_to 'Read', message_path(mess) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

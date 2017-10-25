@@ -4,8 +4,11 @@
       <div class="text-left col-lg-6", style="padding-left: 0px ">
         <label>Tiêu đề: <%= @mess.subject %></label>
       </div>
-      <div class="text-right col-lg-6">
+      <div class="text-right">
         <label>Người gửi: <%= @mess.sender %></label>
+      </div>
+      <div class="text-right">
+        <label>Người nhận: <%= @mess.receiver %></label>
       </div>
     </div>
     <div class="col-lg-offset-3 col-lg-6">
@@ -16,6 +19,6 @@
   </div>
   <div class = 'text-center'>
     <br><br><br><br>
-    <a href="/inbox" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span> Trở lại</a>
+    <a href="javascript:history.back()" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span> Trở lại</a>
   </div>
 </div>
