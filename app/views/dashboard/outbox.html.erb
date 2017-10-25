@@ -9,6 +9,7 @@
           <th>Receiver</th>
           <th>Subject</th>
           <th>Boby</th>
+          <th>Seen time</th>
         </thead>
         <tbody>
           <% @mess.each do |mess| %>
@@ -24,6 +25,9 @@
               </td>
               <td>
                 <%= mess.body %>
+              </td>
+              <td>
+                <%= mess.seen_at %>
               </td>
               <td>
                 <%= link_to 'Read', message_path(mess) %>

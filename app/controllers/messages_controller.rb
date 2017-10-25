@@ -5,6 +5,9 @@ class MessagesController < ApplicationController
 
   def show
      @mess = Message.find_by id: params[:id]
+     if @mess.seen_at == nil && current_user.email_address == @mess.receiver
+        @mess.update seen_at: Time.now
+     end
   end
 
   def create

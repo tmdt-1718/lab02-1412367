@@ -1,17 +1,37 @@
-<tr>
-  <td>
-    <%= message.id %>
-  </td>
-  <td>
-    <%= message.sender %>
-  </td>
-  <td>
-    <%= message.subject %>
-  </td>
-  <td>
-    <%= message.body %>
-  </td>
-  <td>
-    <%= link_to 'Read', message_path(message) %>
-  </td>
-</tr>
+<% if message.seen_at == nil %>
+  <tr>
+    <td>
+      <label><%= message.id %></label>
+    </td>
+    <td>
+      <label><%= message.sender %></label>
+    </td>
+    <td>
+      <label><%= message.subject %></label>
+    </td>
+    <td>
+      <label><%= message.body %></label>
+    </td>
+    <td>
+      <label><%= link_to 'Read', message_path(message) %></label>
+    </td>
+  </tr>
+<% else %>
+  <tr>
+    <td>
+      <%= message.id %>
+    </td>
+    <td>
+      <%= message.sender %>
+    </td>
+    <td>
+      <%= message.subject %>
+    </td>
+    <td>
+      <%= message.body %>
+    </td>
+    <td>
+      <%= link_to 'Read', message_path(message) %>
+    </td>
+  </tr>
+<% end %>
