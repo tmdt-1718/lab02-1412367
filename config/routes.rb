@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   resources :users do
     put :confirm_email_address, on: :member
   end
+  resources :messages
+  get "/inbox", to: "dashboard#inbox"
+  get "/compose" , to: "messages#new"
+  get "/friends" , to: "dashboard#friends"
 end

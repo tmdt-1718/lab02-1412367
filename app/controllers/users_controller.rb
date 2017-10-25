@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     end
   end
 
+    def user_signup_params
+      params.require(:user).permit(User::PARAMS_SIGNUP)
+    end
+
   def show
      @user = User.find_by id: params[:id]
   end
@@ -46,7 +50,4 @@ class UsersController < ApplicationController
   def signup_fail
   end
 
-  def user_signup_params
-    params.require(:user).permit(User::PARAMS_SIGNUP)
-  end
 end

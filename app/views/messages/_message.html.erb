@@ -1,0 +1,17 @@
+<tr>
+  <td>
+    <%= message.id %>
+  </td>
+  <td>
+    <%= message.sender %>
+  </td>
+  <td>
+    <%= message.subject %>
+  </td>
+  <td>
+    <%= message.body %>
+  </td>
+  <td>
+    <%= link_to 'Read', message_path(message) %>
+  </td>
+</tr>

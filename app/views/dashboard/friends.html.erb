@@ -1,0 +1,22 @@
+<!-- <label>Index Page</label> -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 form-group">
+      <label for="">Welcome</label>
+      <%= current_user.fullname %>
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="">List Users</label>
+      <table class="table table-striped">
+        <thead>
+          <th>ID</th>
+          <th>User Name</th>
+          <th>Add friend</th>
+        </thead>
+        <tbody>
+          <%= render @users %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
