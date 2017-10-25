@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create, :check_email_address, :confirm_email_address, :signup_success, :signup_fail]
 
   def index
     @users = User.all

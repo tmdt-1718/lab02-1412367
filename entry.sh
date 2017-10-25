@@ -1,4 +1,4 @@
-#  rails new . --database=postgresql
+# rails new . --database=postgresql
 
 bundle check
 bundle install
