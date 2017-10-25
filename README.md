@@ -6,7 +6,7 @@ Thành viên:
 * [x] **1412367** Hà Đình Nhân (tài khoản github: 1412367)
 * [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
 
-URL: **URL hosting của bài tập**
+URL: **https://lab2-1412367.herokuapp.com**
 
 ## Yêu cầu
 
@@ -46,9 +46,7 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 
 Link ảnh GIF demo ứng dụng:
 
-![Video Walkthrough](demo.gif)
-
-Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
+![Video Walkthrough](https://i.imgur.com/WuEsr5e.gif)
 
 
 ## License
